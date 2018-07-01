@@ -10,6 +10,10 @@ public class Categorie {
         this.name = name;
     }
 
+    public Categorie(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

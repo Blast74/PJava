@@ -48,17 +48,13 @@ public class Main {
 					String loginADD = scanner.nextLine();
 					System.out.println("Entrez le mot de passe");
 					String passwordADD = scanner.nextLine();
-					
-					ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
-					passwordEncryptor.setAlgorithm("SHA-256");
-					passwordEncryptor.setPlainDigest( false );
-					String cryptedPassword = passwordEncryptor.encryptPassword(passwordADD);
+
 					
 					System.out.println("Entrez la categorie");
 					String categorieADD = scanner.nextLine();
 					System.out.println("Entrez le departement");
 					String departementADD = scanner.nextLine();
-					
+					Collaborateurs col = new Collaborateurs(nomADD,prenomADD, loginADD, passwordADD, departementADD , new Categorie(categorieADD),new Langue());
 					statement = connexion.createStatement();    
 					String sqlADD = "INSERT INTO collaborateur (name, firstname, login, password, department) VALUES ('"+ nomADD +"', '"+ prenomADD +"', '"+ loginADD +"', '"+ cryptedPassword +"', '"+ departementADD +"');";
 					statement.execute(sqlADD);         

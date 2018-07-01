@@ -1,5 +1,7 @@
 package Package;
 
+import org.jasypt.util.password.ConfigurablePasswordEncryptor;
+
 import java.util.Arrays;
 
 public class Collaborateurs {
@@ -9,21 +11,29 @@ public class Collaborateurs {
 	protected String login;
 	protected String password;
 	protected String departement;
-	protected String poste;
 	protected Categorie cat;
 	protected Langue[] lang;
 
     public Collaborateurs() {
     }
 
-    public Collaborateurs(int id, String nom, String prenom, String login, String password, String departement, String poste, Categorie cat, Langue[] lang) {
+    public Collaborateurs(int id, String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;
         this.password = password;
         this.departement = departement;
-        this.poste = poste;
+        this.cat = cat;
+        this.lang = lang;
+    }
+
+    public Collaborateurs(String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.login = login;
+        this.password = password;
+        this.departement = departement;
         this.cat = cat;
         this.lang = lang;
     }
@@ -114,6 +124,21 @@ public class Collaborateurs {
                 ", lang=" + Arrays.toString(lang) +
                 '}';
     }
+
+    public String getEncryptPassword(){
+        ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+        passwordEncryptor.setAlgorithm("SHA-256");
+        passwordEncryptor.setPlainDigest( false );
+        return passwordEncryptor.encryptPassword(this.password);
+    }
+
+    public boolean getDecryptPassword(String password){
+        ConfigurablePasswordEncryptor passwordEncryptor = new ConfigurablePasswordEncryptor();
+        passwordEncryptor.setAlgorithm("SHA-256");
+        passwordEncryptor.setPlainDigest( false );
+        return passwordEncryptor.checkPassword(password,this.password);
+    }
+
 
     static void modifierCollaborateur() {
 		
