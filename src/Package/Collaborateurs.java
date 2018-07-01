@@ -13,11 +13,12 @@ public class Collaborateurs {
 	protected String departement;
 	protected Categorie cat;
 	protected Langue[] lang;
+	protected int salaire;
 
     public Collaborateurs() {
     }
 
-    public Collaborateurs(int id, String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang) {
+    public Collaborateurs(int id, String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang, int salaire) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -26,9 +27,10 @@ public class Collaborateurs {
         this.departement = departement;
         this.cat = cat;
         this.lang = lang;
+        this.salaire = salaire;
     }
 
-    public Collaborateurs(String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang) {
+    public Collaborateurs(String nom, String prenom, String login, String password, String departement, Categorie cat, Langue[] lang, int salaire) {
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;
@@ -36,6 +38,7 @@ public class Collaborateurs {
         this.departement = departement;
         this.cat = cat;
         this.lang = lang;
+        this.salaire = salaire;
     }
 
     public int getId() {
@@ -86,14 +89,6 @@ public class Collaborateurs {
         this.departement = departement;
     }
 
-    public String getPoste() {
-        return poste;
-    }
-
-    public void setPoste(String poste) {
-        this.poste = poste;
-    }
-
     public Categorie getCat() {
         return cat;
     }
@@ -110,6 +105,14 @@ public class Collaborateurs {
         this.lang = lang;
     }
 
+    public int getSalaire() {
+        return salaire;
+    }
+
+    public void setSalaire(int salaire) {
+        this.salaire = salaire;
+    }
+
     @Override
     public String toString() {
         return "Collaborateurs{" +
@@ -119,9 +122,9 @@ public class Collaborateurs {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", departement='" + departement + '\'' +
-                ", poste='" + poste + '\'' +
                 ", cat=" + cat +
                 ", lang=" + Arrays.toString(lang) +
+                ", salaire=" + salaire +
                 '}';
     }
 
