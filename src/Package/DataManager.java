@@ -71,7 +71,7 @@ public class DataManager {
 			System.out.println("Créer un collaborateurs");
 		    
 			String sqlAddCollaborateur = "INSERT INTO collaborateurs (nom, prenom, login, password, id_cat, departement) "
-					+ "VALUES ('"+ nom +"', '"+ prenom +"', '"+ login +"', '"+ password +"', '"+ cat +"', '"+ departement +"');"; 
+					+ "VALUES ('"+ collaborateur.nom +"', '"+ collaborateur.prenom +"', '"+ collaborateur.login +"', '"+ collaborateur.getEncryptPassword() +"', '"+ collaborateur.cat +"', '"+ collaborateur.departement +"');"; 
 			statement.execute(sqlAddCollaborateur);
 			
 			statement.close();
@@ -88,7 +88,7 @@ public class DataManager {
 			System.out.println("Modifier un collaborateur");
 			  
 			String sqlAddCollaborateur = "INSERT INTO collaborateurs (nom, prenom, login, password, id_cat, departement) "
-					+ "VALUES ('"+ nomADD +"', '"+ prenomADD +"', '"+ loginADD +"', '"+ cryptedPassword +"', '"+ categorieADD +"', '"+ departementADD +"');"
+					+ "VALUES ('"+ collaborateur.nom +"', '"+ collaborateur.prenom +"', '"+ collaborateur.login +"', '"+ collaborateur.getEncryptPassword() +"', '"+ collaborateur.cat +"', '"+ collaborateur.departement +"');"
 					+ "INNER JOIN speak ON id_col = id=col";  
 			statement.execute(sqlAddCollaborateur);
 			
@@ -105,7 +105,7 @@ public class DataManager {
 		try {
 			System.out.println("Supprimer des collaborateurs");
 			    
-			String sqlAFF = "DELETE FROM collaborateurs WHERE nom = '"+ nom +"' AND prenom = '"+ prenom +"'  "
+			String sqlAFF = "DELETE FROM collaborateurs WHERE nom = '"+ collaborateur.nom +"' AND prenom = '"+ collaborateur.prenom +"'  "
 													   + "INNER JOIN speak ON id_col = id_col"
 													   + "INNER JOIN work ON id_col = id_col";
 			ResultSet resultAFF = statement.executeQuery(sqlAFF);
