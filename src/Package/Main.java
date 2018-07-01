@@ -1,16 +1,12 @@
 package Package;
 
-import java.util.Date; 
 import java.sql.Connection; 
 import java.sql.DriverManager; 
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 import java.sql.Statement; 
-import java.sql.PreparedStatement;
 import java.util.Scanner;
-import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.jasypt.util.password.ConfigurablePasswordEncryptor;
-import org.jasypt.util.password.StrongPasswordEncryptor;
 
 public class Main {
 
@@ -28,14 +24,14 @@ public class Main {
 			System.out.println("Chargement des drivers");
 			
 			connexion = DriverManager.getConnection(urlBDD, loginBDD, passBDD);
-			System.out.println("Connexion à la BDD");
+			System.out.println("Connexion a la BDD");
 			
 			System.out.println("1 - Ajouter un collaborateur");
 			System.out.println("2 - Modifier un collaborateur");
 			System.out.println("3 - Supprimer un collaborateur");
 			System.out.println("4 - Afficher un collaborateur");
-			System.out.println("5 - Afficher les collaborateur par catégorie");
-			System.out.println("6 - Afficher les collaborateur par département");
+			System.out.println("5 - Afficher les collaborateur par categorie");
+			System.out.println("6 - Afficher les collaborateur par departement");
 			System.out.println("7 - Calculer un salaire");
 			System.out.println("9 - Quitter");
 			int choixMenu = Clavier.lireInt();
@@ -60,13 +56,13 @@ public class Main {
 					
 					System.out.println("Entrez la categorie");
 					String categorieADD = scanner.nextLine();
-					System.out.println("Entrez le département");
+					System.out.println("Entrez le departement");
 					String departementADD = scanner.nextLine();
 					
 					statement = connexion.createStatement();    
-					String sqlADD = "INSERT INTO collaborateurs (nom, prenom, login, password, categorie, departement) VALUES ('"+ nomADD +"', '"+ prenomADD +"', '"+ loginADD +"', '"+ cryptedPassword +"', '"+ categorieADD +"', '"+ departementADD +"');";  
+					String sqlADD = "INSERT INTO collaborateur (name, firstname, login, password, department) VALUES ('"+ nomADD +"', '"+ prenomADD +"', '"+ loginADD +"', '"+ cryptedPassword +"', '"+ departementADD +"');";
 					statement.execute(sqlADD);         
-					System.out.println("Collaborateur ajouté"); 
+					System.out.println("Collaborateur ajoute");
 					
 				    break; 
 			  case 2:
@@ -101,7 +97,7 @@ public class Main {
 					statement = connexion.createStatement();    
 					String sqlDEL = "DELETE FROM collaborateurs WHERE nom = '"+ nomDEL +"' AND prenom = '"+ prenomDEL +"' ";
 					statement.execute(sqlDEL);         
-					System.out.println("Collaborateur supprimé");
+					System.out.println("Collaborateur supprimï¿½");
 				  	break;
 			  case 4:
 				  	System.out.println("Liste des collaborateurs");
@@ -119,7 +115,7 @@ public class Main {
 					} 
 				  	break;
 			  case 5:
-				  	System.out.println("Entrez la catégorie recherchée");
+				  	System.out.println("Entrez la catï¿½gorie recherchï¿½e");
 				  	String nomCateg = scanner.nextLine();
 					
 					statement = connexion.createStatement();    
@@ -135,7 +131,7 @@ public class Main {
 					} 
 				  	break;
 			  case 6:
-				  	System.out.println("Entrez le département recherché");
+				  	System.out.println("Entrez le dï¿½partement recherchï¿½");
 				  	String nomDept = scanner.nextLine();
 					
 					statement = connexion.createStatement();    
