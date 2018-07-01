@@ -1,17 +1,13 @@
 package Package;
 
-public class Langue {
+public class Categorie {
+
     public int id;
     public String name;
-    public int exp ;
 
-    public Langue() {
-    }
-
-    public Langue(int id, String name, int exp) {
+    public Categorie(int id, String name) {
         this.id = id;
         this.name = name;
-        this.exp = exp;
     }
 
     public int getId() {
@@ -30,20 +26,11 @@ public class Langue {
         this.name = name;
     }
 
-    public int getExp() {
-        return exp;
-    }
-
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
-
     @Override
     public String toString() {
-        return "Langue{" +
+        return "Categorie{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", exp=" + exp +
                 '}';
     }
 }

@@ -1,109 +1,121 @@
 package Package;
 
-import java.sql.ResultSet;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Collaborateurs {
-
+    protected int id;
 	protected String nom;
 	protected String prenom;
 	protected String login;
 	protected String password;
 	protected String departement;
-	protected String categorie;
-	protected int nbHeure;
-	
-	public Collaborateurs() {
-		
-	}
+	protected String poste;
+	protected Categorie cat;
+	protected Langue[] lang;
 
-	public Collaborateurs(String nom, String prenom, String login, String password, String departement, String categorie, int nbHeure) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.login = login;
-		this.password = password;
-		this.departement = departement;
-		this.categorie = categorie;
-		this.nbHeure = nbHeure;
-	}
+    public Collaborateurs() {
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public Collaborateurs(int id, String nom, String prenom, String login, String password, String departement, String poste, Categorie cat, Langue[] lang) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.login = login;
+        this.password = password;
+        this.departement = departement;
+        this.poste = poste;
+        this.cat = cat;
+        this.lang = lang;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public String getLogin() {
-		return login;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getLogin() {
+        return login;
+    }
 
-	public String getDepartement() {
-		return departement;
-	}
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-	public void setDepartement(String departement) {
-		this.departement = departement;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getCategorie() {
-		return categorie;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setCategorie(String type) {
-		this.categorie = type;
-	}
+    public String getDepartement() {
+        return departement;
+    }
 
-	public int getNbHeure() {
-		return nbHeure;
-	}
+    public void setDepartement(String departement) {
+        this.departement = departement;
+    }
 
-	public void setNbHeure(int nbHeure) {
-		this.nbHeure = nbHeure;
-	}
-	
-	static Scanner scanner = new Scanner(System.in);
-	
-	static void ajouterCollaborateur() {
-		System.out.println("Entrez le nom");
-		String nom = scanner.nextLine();
-		System.out.println("Entrez le prenom");
-		String prenom = scanner.nextLine();
-		System.out.println("Entrez le login");
-		String login = scanner.nextLine();
-		System.out.println("Entrez le mot de passe");
-		String password = scanner.nextLine();
-		System.out.println("Entrez la categorie");
-		String categorie = scanner.nextLine();
-		System.out.println("Entrez le département");
-		String departement = scanner.nextLine();
-		
-		System.out.println(nom + prenom + login + password + categorie + departement);
-	}
-	
-	static void modifierCollaborateur() {
+    public String getPoste() {
+        return poste;
+    }
+
+    public void setPoste(String poste) {
+        this.poste = poste;
+    }
+
+    public Categorie getCat() {
+        return cat;
+    }
+
+    public void setCat(Categorie cat) {
+        this.cat = cat;
+    }
+
+    public Langue[] getLang() {
+        return lang;
+    }
+
+    public void setLang(Langue[] lang) {
+        this.lang = lang;
+    }
+
+    @Override
+    public String toString() {
+        return "Collaborateurs{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", departement='" + departement + '\'' +
+                ", poste='" + poste + '\'' +
+                ", cat=" + cat +
+                ", lang=" + Arrays.toString(lang) +
+                '}';
+    }
+
+    static void modifierCollaborateur() {
 		
 	}
 	
@@ -123,13 +135,5 @@ public class Collaborateurs {
 		
 	}
 
-	@Override
-	public String toString() {
-		return "Employes [nom=" + nom + ", prenom=" + prenom + ", login=" + login + ", password=" + password
-				+ ", departement=" + departement + ", categorie=" + categorie + ", nbHeure=" + nbHeure + ", getNom()=" + getNom()
-				+ ", getPrenom()=" + getPrenom() + ", getLogin()=" + getLogin() + ", getPassword()=" + getPassword()
-				+ ", getDepartement()=" + getDepartement() + ", getCategorie()=" + getCategorie() + ", getNbHeure()="
-				+ getNbHeure() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
-	}
+
 }

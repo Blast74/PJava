@@ -4,19 +4,19 @@ import java.io.*;
 
 /**
 * Le principal but de la classe Clavier est de proposer des
-* entrées clavier sans exception. On propose ainsi
-* une opération élémentaire de lecture sur l'entrée standard. Cette
-* classe permet d'éviter de rentrer dans les détails complexes des
-* entrées-sorties.
+* entrï¿½es clavier sans exception. On propose ainsi
+* une opï¿½ration ï¿½lï¿½mentaire de lecture sur l'entrï¿½e standard. Cette
+* classe permet d'ï¿½viter de rentrer dans les dï¿½tails complexes des
+* entrï¿½es-sorties.
 */
 
 public class Clavier {
  /**
-  * Cette méthode lit un entier dans une chaîne de caractères.
-  * Elle s'occupe des éventuelles exceptions. Si une exception
-  * (NumberFormatException) est attrapée, la méthode renvoie l'entier
+  * Cette mï¿½thode lit un entier dans une chaï¿½ne de caractï¿½res.
+  * Elle s'occupe des ï¿½ventuelles exceptions. Si une exception
+  * (NumberFormatException) est attrapï¿½e, la mï¿½thode renvoie l'entier
   * nul et affiche un message d'erreur.  
-  * @param s la chaîne de caractères dans laquelle on lit
+  * @param s la chaï¿½ne de caractï¿½res dans laquelle on lit
   * @return l'entier lu (0 en cas d'erreur) */
  public static int toInt(String s) {
    int result=0;
@@ -29,12 +29,12 @@ public class Clavier {
  }
 
  /**
-  * Cette méthode lit un réel (double) dans une chaîne de caractères.
-  * Elle s'occupe des éventuelles exceptions. Si une exception
-  * (NumberFormatException) est attrapée, la méthode renvoie le réel
+  * Cette mï¿½thode lit un rï¿½el (double) dans une chaï¿½ne de caractï¿½res.
+  * Elle s'occupe des ï¿½ventuelles exceptions. Si une exception
+  * (NumberFormatException) est attrapï¿½e, la mï¿½thode renvoie le rï¿½el
   * nul et affiche un message d'erreur.  
-  * @param s la chaîne de caractères dans laquelle on lit
-  * @return le réel lu (0 en cas d'erreur) 
+  * @param s la chaï¿½ne de caractï¿½res dans laquelle on lit
+  * @return le rï¿½el lu (0 en cas d'erreur) 
   */
  public static double toDouble(String s) {
    double result=0;
@@ -47,11 +47,11 @@ public class Clavier {
  }
 
  /**
-  * Cette méthode lit une ligne sur l'entrée standard et s'occupe des
-  * éventuelles exceptions. Si une exception (IOException) est
-  * attrapée, la méthode renvoie une chaîne vide et affiche un
+  * Cette mï¿½thode lit une ligne sur l'entrï¿½e standard et s'occupe des
+  * ï¿½ventuelles exceptions. Si une exception (IOException) est
+  * attrapï¿½e, la mï¿½thode renvoie une chaï¿½ne vide et affiche un
   * message d'erreur.
-  * @return la chaîne lue (vide en cas d'erreur) 
+  * @return la chaï¿½ne lue (vide en cas d'erreur) 
   */
  public static String lireString() {
    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -66,10 +66,10 @@ public class Clavier {
  }
 
  /**
-  * Cette méthode lit un entier sur l'entrée standard. 
-  * Elle s'occupe des éventuelles exceptions et utilise la méthode
-  * toInt pour obtenir un entier. S'il y a un problème de lecture,
-  * la méthode affiche un message d'erreur et renvoie 0.
+  * Cette mï¿½thode lit un entier sur l'entrï¿½e standard. 
+  * Elle s'occupe des ï¿½ventuelles exceptions et utilise la mï¿½thode
+  * toInt pour obtenir un entier. S'il y a un problï¿½me de lecture,
+  * la mï¿½thode affiche un message d'erreur et renvoie 0.
   * @return l'entier lu (0 en cas d'erreur)
   */
  public static int lireInt() {
@@ -77,40 +77,40 @@ public class Clavier {
  }
 
  /**
-  * Cette méthode lit un réel sur l'entrée standard. 
-  * Elle s'occupe des éventuelles exceptions et utilise la méthode
-  * toDouble pour obtenir un réel. S'il y a un problème de lecture,
-  * la méthode affiche un message d'erreur et renvoie 0.
-  * @return le réel lu (0 en cas d'erreur)
+  * Cette mï¿½thode lit un rï¿½el sur l'entrï¿½e standard. 
+  * Elle s'occupe des ï¿½ventuelles exceptions et utilise la mï¿½thode
+  * toDouble pour obtenir un rï¿½el. S'il y a un problï¿½me de lecture,
+  * la mï¿½thode affiche un message d'erreur et renvoie 0.
+  * @return le rï¿½el lu (0 en cas d'erreur)
   */
  public static double lireDouble() {
    return toDouble(lireString());
  }
  
  /**
-  * Cette méthode lit un booléen sur l'entrée standard. 
-  * Elle s'occupe des éventuelles exceptions et renvoie false
-  * s'il y a un problème de lecture.
-  * @return le booléen lu (false en cas d'erreur)
+  * Cette mï¿½thode lit un boolï¿½en sur l'entrï¿½e standard. 
+  * Elle s'occupe des ï¿½ventuelles exceptions et renvoie false
+  * s'il y a un problï¿½me de lecture.
+  * @return le boolï¿½en lu (false en cas d'erreur)
   */
  public static boolean lireBoolean() {
    return Boolean.valueOf(lireString()).booleanValue();
  }
  
  /**
-  * Cette méthode lit un caractère sur l'entrée standard. 
-  * Elle s'occupe des éventuelles exceptions et renvoie NULL
-  * s'il y a un problème de lecture.
-  * N.B.: si plusieurs caractères sont entrés, c'est le premier
+  * Cette mï¿½thode lit un caractï¿½re sur l'entrï¿½e standard. 
+  * Elle s'occupe des ï¿½ventuelles exceptions et renvoie NULL
+  * s'il y a un problï¿½me de lecture.
+  * N.B.: si plusieurs caractï¿½res sont entrï¿½s, c'est le premier
   * qui est pris en compte.
-  * @return le (premier) caractère lu (caractère spécial NULL en cas d'erreur)
+  * @return le (premier) caractï¿½re lu (caractï¿½re spï¿½cial NULL en cas d'erreur)
   */
  public static char lireChar() {
    char result='\u0000';
    try {
      result=lireString().charAt(0);
    } catch (IndexOutOfBoundsException e) {
-     System.err.println("Erreur de lecture: aucun caractère entré");
+     System.err.println("Erreur de lecture: aucun caractï¿½re entrï¿½");
    }
    return result;
  }
